@@ -33,7 +33,11 @@ class Vampire {
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
-    return this.yearConverted === vampire.yearConverted;
+    if (this === 'rootVampire') return true;
+    else if (vampire === 'rootVampire') return false;
+    else if (this.yearConverted > vampire.yearConverted) {
+      return true;
+    } else return false;
   }
 
   /** Stretch **/
